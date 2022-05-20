@@ -71,7 +71,7 @@ const Timer: NextPage = () => {
 									{(isRunning && sequence.isCurrent) && <FontAwesomeIcon icon={faPlay} />}
 								</div>
 								<span className="mr-2 w-6">{sequence.roundsCompleted}<span className="text-sm">x</span></span>
-								<span className="mr-2 w-14">{sequence.durationInSeconds}s</span>
+								<span className="mr-2 w-14 font-mono">{secondsToDisplay(sequence.durationInSeconds)}</span>
 								<span className="mr-2">{sequence.name}</span>
 							</div>
 						})}
@@ -96,7 +96,7 @@ const Timer: NextPage = () => {
 								</button>
 							</div>}
 							{!isFinished && <div className="text-center w-64">
-								<p className="text-8xl font-extrabold pb-4">{secondsToDisplay(remainingTime)}</p>
+								<p className="text-8xl font-extrabold pb-4 font-mono">{secondsToDisplay(remainingTime)}</p>
 
 								<div className="w-full rounded-full h-6 bg-white/30 overflow-hidden mb-4">
 									<div className="h-full rounded-full transition-all duration-500 ease-linear bg-green-400" style={{ width: remainingPercentage + "%" }}></div>
